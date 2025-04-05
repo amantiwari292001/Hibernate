@@ -1,0 +1,28 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+
+        <!--Create Connection-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jdbc</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">iWcMuPe4d*#</property>
+
+        <!--Create Table-->
+
+        <!-- If present, update, else create -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Deletes table everytime and creates one -->
+        <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
+
+        <!--Different SQL DBs have different dialect-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--To print executed query-->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- For caching -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+        <property name="hibernate.jakarta.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+    </session-factory>
+</hibernate-configuration>

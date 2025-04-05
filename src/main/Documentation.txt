@@ -1,0 +1,23 @@
+Hibernate-> Object Relational Mapping, here every object will a row in the database.
+            To run this we required 3 files, One main,
+            another, an object class with no constructor and with variables which will be our columns,
+            last is a configuration file under resource folder, where we will store our driver and connection details.
+
+com.hibernate-> CURD Operations
+com.hibernate1-> Adding another object's data as columns in main object, Using @Embeddable mode
+com.hibernate2-> Adding foreign key of child/other table to parent/main table, Added @OneToOne keyword to parent/main table.
+com.hibernate3-> Adding one data of field of main table to multiple fields of child table,
+                 Added @OneToMany(main) and @ManyToOne(child) with mapped by dictation in main.
+                 Primary key of main added to other table as foreign keys. Added other files objects as List in main data.
+com.hibernate4-> Adding one data to multiple filed of each other's table data. Added @ManyToMany on both the file
+                 and use list for both classes, then same mapped by dictation(Where you write dictation,
+                 other file handle relation creation.)
+
+One session works for one query,
+When we retrieve a record but don't print for a table which has relation with another table, we get query run just to retrieve data without relation.
+    To counter this we use FetchType.EAGER beside @Annotations of data relations, e.g. @ManyToMany(fetch = FetchType.EAGER)
+
+Get(Eager) and Load(Lazy)  to retrieve data are same.
+
+Hibernate doesn't fire a request for same data with same session.(L1 Caching kind)
+Hibernate allows 2 sessions to interact if firing same query(L2 Caching)
